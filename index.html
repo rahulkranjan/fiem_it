@@ -12,6 +12,8 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- css  -->
     <link rel="stylesheet" href="style.css" />
@@ -27,13 +29,30 @@
     Speed: <span id="speed"></span>
 </div> -->
 
-  <body style="background-color: black; overflow-y:hidden">
-    <nav class="navbar">
-      <a href="#">HOME</a>
-      <a href="events.html">Events</a>
-      <a href="about.html">About</a>
-      <div id="indicator"></div>
-    </nav>
+  <body style="background-color: black; overflow-y: hidden">
+    <div class="navbar">
+      <div class="flex-container">
+        <nav>
+          <div class="selector" id="selector"></div>
+          <ul>
+            <li data-list="1">
+              <span class="material-icons"> dashboard </span>
+            </li>
+            <li data-list="2">
+              <span class="material-icons"> chat_bubble_outline </span>
+            </li>
+            <li data-list="3" class="active">
+              <span class="material-icons"> home </span>
+            </li>
+            <li data-list="4">
+              <span class="material-icons"> favorite_border </span>
+            </li>
+            <li data-list="5"><span class="material-icons"> info </span></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
     <div class="th-background">
       <h1 style="text-align: center" class="th-text-1">
         Department of Information Technology
@@ -49,7 +68,27 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+    <script>
+      let linkItems = document.getElementsByTagName("li");
+      let selector = document.getElementById("selector");
 
+      selector.style.left = 3 * 50 - 18 + "px";
+
+      for (let linkItem of linkItems) {
+        linkItem.addEventListener("click", (e) => {
+          let listNum = e.target.dataset.list;
+          selector.style.left = listNum * 50 - 18 + "px";
+          event.target.classList.add("active");
+
+          // remove active class from other links
+          for (let linkItem of linkItems) {
+            if (linkItem.dataset.list !== listNum) {
+              linkItem.classList.remove("active");
+            }
+          }
+        });
+      }
+    </script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
