@@ -190,3 +190,15 @@ li.active span {
 }
 
 /* navbar 2 */
+
+
+
+
+/* About us css */
+.container-fluid{
+  text-align: center;
+  background-color: aqua;
+}
+.container{
+  background-color: bisque;
+}
