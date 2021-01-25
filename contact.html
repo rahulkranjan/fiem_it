@@ -38,8 +38,9 @@
 
   <body style="background-color: black; overflow-y: hidden">
     <!-- navbar start -->
+    <div class="container">
     <div class="navbar">
-      <div class="flex-container">
+      <div class="flex-container align-item-center">
         <nav>
           <div class="selector" id="selector"></div>
           <ul class="th-pl-0">
@@ -48,14 +49,13 @@
                 ><span class="material-icons"> dashboard </span></a
               >
             </li>
-            <li data-list="2">
-              <a href="contact.html">
-              <span class="material-icons"> chat_bubble_outline </span></a>
+            <li data-list="2" class="active">
+              <span class="material-icons"> chat_bubble_outline </span>
             </li>
-            <a href="index.html">
-            <li data-list="3" class="active"></a>
-              
-              <span class="material-icons"> home </span>
+            <li data-list="3" >
+              <a href="index.html">
+                <span class="material-icons"> home </span></a
+              >
             </li>
             <li data-list="4">
               <span class="material-icons"> favorite_border </span>
@@ -65,15 +65,39 @@
         </nav>
       </div>
     </div>
+</div>
     <!-- end of navbar -->
+    <h3 style="text-align: center;color: white;">Contact Form</h3>
 
-    <div class="th-background">
-      <h1 style="text-align: center" class="th-text-1">
-        Department of Information Technology
-      </h1>
-      <p class="th-text-2">Future Institute of Engineering and Management</p>
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname" style="color: white;">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Your name.."
+        />
+
+        <label for="lname" style="color: white;">Last Name</label>
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Your last name.."
+        />
+
+        <label for="subject" style="color: white;">Subject</label>
+        <textarea
+          id="subject"
+          name="subject"
+          placeholder="Write something.."
+          style="height: 200px"
+        ></textarea>
+
+        <input type="submit" value="Submit" />
+      </form>
     </div>
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
